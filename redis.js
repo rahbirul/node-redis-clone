@@ -1,6 +1,7 @@
 'use strict';
 
-var storage = require('./storage');
+var _ = require('lodash'),
+  storage = require('./storage');
 
 var get = function (req, res) {
   var key = req.key;
@@ -18,6 +19,7 @@ var set = function (req, res) {
   res.ok();
 };
 
+
 var exists = function (req, res) {
   res.number(storage.exists(req.key));
 };
@@ -26,9 +28,47 @@ var del = function (req, res) {
   res.number(storage.del(req.key));
 };
 
+var incr = function (req, res) {
+  var key = req.key;
+
+  if (!storage.exists(key)) {
+    storage.set(key, '1');
+    res.number(1);
+    return;
+  }
+
+  var currentValue = storage.get(key);
+  if (_.isNaN(currentValue++)) {
+    res.error('value is not an integer or out of range');
+    return;
+  }
+  storage.set(key, currentValue);
+  res.number(currentValue);
+};
+
+var decr = function (req, res) {
+  var key = req.key;
+
+  if (!storage.exists(key)) {
+    storage.set(key, '-1');
+    res.number(-1);
+    return;
+  }
+
+  var currentValue = storage.get(key);
+  if (_.isNaN(currentValue--)) {
+    res.error('value is not an integer or out of range');
+    return;
+  }
+  storage.set(key, currentValue);
+  res.number(currentValue);
+};
+
 module.exports = {
   get: get,
   set: set,
   exists: exists,
-  del: del
+  del: del,
+  incr: incr,
+  decr: decr
 };

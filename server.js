@@ -11,6 +11,8 @@ var operations = {
   'SET': redis.set,
   'DEL': redis.del,
   'EXISTS': redis.exists,
+  'INCR': redis.incr,
+  'DECR': redis.decr
 };
 
 var server = net.createServer(function(socket) {

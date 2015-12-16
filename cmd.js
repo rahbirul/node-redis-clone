@@ -34,6 +34,14 @@ var parseEXISTS = function (input) {
   return parseGET(input);
 };
 
+var parseINCR = function (input) {
+  return parseGET(input);
+};
+
+var parseDECR = function (input) {
+  return parseGET(input);
+};
+
 var CommandParser = function () {};
 
 CommandParser.parse = function (buffer) {
@@ -57,7 +65,9 @@ CommandParser.parse = function (buffer) {
   var parsers = {
     'GET': parseGET,
     'DEL': parseDELETE,
-    'EXISTS': parseEXISTS
+    'EXISTS': parseEXISTS,
+    'INCR': parseINCR,
+    'DECR': parseDECR
   };
 
   if (cmd === 'SET') {
