@@ -1,0 +1,11 @@
+{
+  "name": "node-redis-clone",
+  "version": "0.0.1",
+  "description": "A node server that implements a subset of the Redis protocol",
+  "engines": {
+    "node": ">= 4.1.1"
+  },
+  "devDependencies": {
+    "lodash": "3.10.1"
+  }
+}
