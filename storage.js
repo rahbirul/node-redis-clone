@@ -14,6 +14,7 @@ var exists = function (key) {
 };
 
 var del = function (keys) {
+  //TODO - move logic to redis.js for better test coverage, make this a dumb key delete operation
   var deleted = 0;
   if (typeof(keys) === 'string') {
     if (exists(keys)) {

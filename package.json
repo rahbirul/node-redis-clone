@@ -6,6 +6,10 @@
     "node": ">= 4.1.1"
   },
   "devDependencies": {
-    "lodash": "3.10.1"
+    "lodash": "3.10.1",
+    "mocha": "2.3.4",
+    "chai": "2.3.0",
+    "sinon-chai": "2.8.0",
+    "faker": "3.0.1"
   }
 }
