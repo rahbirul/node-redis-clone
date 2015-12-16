@@ -18,13 +18,18 @@ Developed on Node 4.1.1, but should be compliant with less recent versions.
 2. `SET key value`
 3. `EXISTS key`
 4. `DELETE key [key...]`
-5. `INCR` key (atomicity at concurrent access is not guaranteed)
-6. `DECR` key (atomicity at concurrent access is not guaranteed)
+5. `INCR key` (atomicity at concurrent access is not guaranteed)
+6. `DECR key` (atomicity at concurrent access is not guaranteed)
+
+## Run tests
+
+1. Install `mocha`: `npm install -f mocha`
+2. Run the tests (while inside the project directory): `mocha`
 
 ## TODOs
 
 1. Persist data between server restarts/crashes.
 2. Efficient (and more elegant) parsing of command inputs
 3. Support More operations
-4. Write tests
+4. Write more tests
 5. Atomic operations
