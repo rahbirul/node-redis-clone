@@ -50,4 +50,5 @@ var server = net.createServer(function(socket) {
   });
 });
 
-server.listen(config.PORT, 'localhost');
+var port = process.argv[2] || config.PORT;
+server.listen(port, 'localhost');
