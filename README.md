@@ -18,8 +18,8 @@ Developed on Node 4.1.1, but should be compliant with less recent versions.
 2. `SET key value`
 3. `EXISTS key`
 4. `DELETE key [key...]`
-5. INCR key (atomicity at concurrent access is not guaranteed)
-6. DECR key (atomicity at concurrent access is not guaranteed)
+5. `INCR` key (atomicity at concurrent access is not guaranteed)
+6. `DECR` key (atomicity at concurrent access is not guaranteed)
 
 ## TODOs
 
