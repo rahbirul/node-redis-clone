@@ -23,7 +23,7 @@ Developed on Node 4.1.1, but should be compliant with less recent versions.
 
 ## Run tests
 
-1. Install `mocha`: `npm install -f mocha`
+1. Install `mocha`: `npm install -g mocha`
 2. Run the tests (while inside the project directory): `mocha`
 
 ## TODOs
